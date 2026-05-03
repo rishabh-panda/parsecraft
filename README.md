@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🔧 parsecraft
+# 🔧 ParseCraft
 
 ### A model-agnostic LLM output reliability layer
 
@@ -26,7 +26,7 @@ LLM outputs are inherently unreliable. They may contain:
 - Inconsistent encoding, BOM sequences, or line endings
 - Transient failures from rate limits or network issues
 
-**parsecraft solves all of this** with a fault-tolerant, 7-stage pipeline that turns raw LLM text into clean, validated, structured data — with a confidence score attached.
+**ParseCraft solves all of this** with a fault-tolerant, 7-stage pipeline that turns raw LLM text into clean, validated, structured data — with a confidence score attached.
 
 ---
 
@@ -187,7 +187,7 @@ print(result.repair_history)     # []
 
 ### Handling Malformed JSON
 
-parsecraft automatically repairs common LLM mistakes:
+ParseCraft automatically repairs common LLM mistakes:
 
 ```python
 # LLM returned single quotes and a trailing comma — no problem
@@ -389,7 +389,7 @@ A score of `1.0` means: no repairs, no retries, no warnings — perfect output.
 
 ## Correctness Properties
 
-parsecraft is validated against **21 formal correctness properties** using property-based testing (Hypothesis):
+ParseCraft is validated against **21 formal correctness properties** using property-based testing (Hypothesis):
 
 | # | Property | Stage |
 |---|---|---|
@@ -499,6 +499,6 @@ MIT © 2026 — see [LICENSE](LICENSE) for details.
 
 <div align="center">
 
-**parsecraft** — because LLM output shouldn't be your problem.
+**ParseCraft** — because LLM output shouldn't be your problem.
 
 </div>
