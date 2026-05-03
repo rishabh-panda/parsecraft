@@ -6,5 +6,4 @@ venv/
 .env*
 tests/
 test*
-/.pytest*
 .kiro/
