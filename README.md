@@ -176,7 +176,6 @@ Here is the user data you requested:
 
 ```json
 {"name": "Alice", "age": 30}
-```
 """
 
 result = pipeline.execute(llm_output, User)
@@ -434,15 +433,16 @@ python -m pytest tests/unit/
 **Current status: 155 tests, 0 failures.**
 
 ```
-tests/unit/test_extraction_errors.py   9 passed
-tests/unit/test_extractor.py          44 passed
-tests/unit/test_normalization_errors.py 9 passed
-tests/unit/test_normalizer.py         28 passed
-tests/unit/test_parser.py             23 passed
-tests/unit/test_repairer.py           20 passed
-tests/unit/test_validator.py          22 passed
-─────────────────────────────────────────────────
-TOTAL                                155 passed
+tests/unit/test_extraction_errors.py        09 passed
+tests/unit/test_extractor.py                44 passed
+tests/unit/test_normalization_errors.py     09 passed
+tests/unit/test_normalizer.py               28 passed
+tests/unit/test_parser.py                   23 passed
+tests/unit/test_repairer.py                 20 passed
+tests/unit/test_validator.py                22 passed
+──────────────────────────────────────────────────────
+TOTAL                                      155 passed
+──────────────────────────────────────────────────────
 ```
 
 ---
@@ -466,7 +466,7 @@ parsecraft/
 │   └── unit/               # 155 unit tests
 ├── pyproject.toml
 ├── README.md
-└── LICENSE
+└── LICENSE.md
 ```
 
 ---
@@ -488,17 +488,6 @@ black src/ tests/
 # Type check
 mypy src/
 ```
-
----
-
-## Roadmap
-
-- [ ] `OutputParser` high-level API (single-call entry point)
-- [ ] Async pipeline support (`async def execute(...)`)
-- [ ] LLM-based repair fallback (configurable)
-- [ ] GitHub Actions CI/CD with PyPI publish on release
-- [ ] Integration tests for end-to-end scenarios
-- [ ] 90%+ code coverage enforcement
 
 ---
 
