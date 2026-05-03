@@ -1,0 +1,10 @@
+venv*
+venv/
+.venv/
+.env
+.env.example
+.env*
+tests/
+test*
+/.pytest*
+.kiro/
