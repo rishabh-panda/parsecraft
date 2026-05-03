@@ -11,3 +11,10 @@ src/parsecraft/extraction/extractor.py
 src/parsecraft/normalization/__init__.py
 src/parsecraft/normalization/errors.py
 src/parsecraft/normalization/normalizer.py
+src/parsecraft/parsing/__init__.py
+src/parsecraft/parsing/errors.py
+src/parsecraft/parsing/parser.py
+src/parsecraft/repair/__init__.py
+src/parsecraft/repair/errors.py
+src/parsecraft/repair/repairer.py
+src/parsecraft/repair/strategies.py

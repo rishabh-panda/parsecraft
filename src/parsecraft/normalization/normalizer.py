@@ -63,19 +63,15 @@ class Normalizer:
         """Remove BOM (Byte Order Mark) sequences.
 
         Handles common BOM sequences:
-        - UTF-8 BOM: \ufeff
-        - UTF-16 LE BOM: \ufffe
-        - UTF-16 BE BOM: \ufeff
+        - UTF-8 BOM: \ufeff (U+FEFF)
+        - UTF-16 LE BOM: \ufffe (U+FFFE) - actually not valid BOM, used to detect endianness
+        - UTF-16 BE BOM: \ufeff (U+FEFF)
+        
+        In Python strings, these are single Unicode code points.
         """
-        # Remove UTF-8 BOM
+        # Remove UTF-8 BOM (U+FEFF)
         if text.startswith('\ufeff'):
             return text[1:]
-        # Remove UTF-16 LE BOM
-        if text.startswith('\ufffe'):
-            return text[2:]
-        # Remove UTF-16 BE BOM
-        if text.startswith('\ufeff'):
-            return text[2:]
 
         return text
 
@@ -97,7 +93,7 @@ class Normalizer:
         """Normalize excessive whitespace.
 
         - Multiple consecutive spaces become single space
-        - Tabs at line start are removed
+        - Leading whitespace on each line is removed
         - Trailing whitespace on each line is removed
         - Preserves whitespace inside strings
         """
@@ -105,15 +101,20 @@ class Normalizer:
         normalized_lines = []
 
         for line in lines:
-            # Remove tabs at line start
-            line = line.lstrip('\t')
-
+            # Remove leading and trailing whitespace
+            line = line.strip()
+            
             # Normalize multiple spaces to single space
             # But preserve spaces inside strings by tracking quote state
             normalized_line = self._normalize_spaces_in_line(line)
             normalized_lines.append(normalized_line)
 
-        return '\n'.join(normalized_lines)
+        # Join lines back together
+        result = '\n'.join(normalized_lines)
+        
+        # Also handle the case where the original text starts with whitespace
+        # but the first line after strip() has content
+        return result
 
     def _normalize_spaces_in_line(self, line: str) -> str:
         """Normalize spaces in a single line, preserving string content."""
