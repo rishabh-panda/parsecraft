@@ -7,7 +7,7 @@
 **Transform messy, unstructured LLM responses into valid, structured data — reliably.**
 
 [![Python](https://img.shields.io/badge/python-3.9%2B-blue?style=flat-square&logo=python)](https://www.python.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-black?style=flat-square)](LICENSE)
 [![Tests](https://img.shields.io/badge/tests-155%20passing-brightgreen?style=flat-square)](#testing)
 [![Pydantic](https://img.shields.io/badge/pydantic-v2-orange?style=flat-square)](https://docs.pydantic.dev/)
 [![Version](https://img.shields.io/badge/version-0.1.0-blue?style=flat-square)](#installation)
